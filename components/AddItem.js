@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import {View, TextInput, Button, StyleSheet} from 'react-native';
+import {View, TextInput, StyleSheet} from 'react-native';
+import {Button} from 'react-native-elements';
+import Icon from 'react-native-vector-icons/dist/MaterialIcons';
 
 const AddItem = ({propsAddItem}) => {
   const [text, setText] = useState('');
@@ -15,7 +17,10 @@ const AddItem = ({propsAddItem}) => {
       />
       <Button
         style={styles.button}
-        color="#03DAC5"
+        iconRight
+        type="outline"
+        titleStyle={styles.buttonText}
+        icon={<Icon name="add" size={23} color="#03DAC5" />}
         onPress={() => propsAddItem(text)}
         title="Add Item"
       />
@@ -32,6 +37,9 @@ const styles = StyleSheet.create({
   },
   button: {
     padding: 10,
+  },
+  buttonText: {
+    color: '#03DAC5',
   },
 });
 
