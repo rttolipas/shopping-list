@@ -11,12 +11,16 @@ const AddItem = ({propsAddItem}) => {
       <TextInput
         style={styles.textInput}
         onChangeText={onChange}
+        value={text}
         placeholder="Add Item..."
       />
       <Button
         style={styles.button}
         color="#03DAC5"
-        onPress={() => propsAddItem(text)}
+        onPress={() => {
+          propsAddItem(text);
+          setText('');
+        }}
         title="Add Item"
       />
     </View>
